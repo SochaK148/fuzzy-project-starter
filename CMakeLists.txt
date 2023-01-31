@@ -14,7 +14,7 @@ find_package(storm REQUIRED)
 set(SOURCE_FILES src/main.cpp)
 
 # set executable
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
-target_include_directories(${PROJECT_NAME} PUBLIC ${SOURCE_FILES} ${storm_INCLUDE_DIR} ${storm-parsers_INCLUDE_DIR})
+add_executable(${PROJECT_NAME} "src/main.cpp")
+target_include_directories(${PROJECT_NAME} PUBLIC ${SOURCE_FILES} "src/unit_tests.cpp" "src/benchmark.cpp" ${storm_INCLUDE_DIR} ${storm-parsers_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} PRIVATE storm storm-parsers)
 
